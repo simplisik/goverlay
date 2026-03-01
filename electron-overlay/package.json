@@ -1,6 +1,6 @@
 {
   "name": "@simplisik/goverlay",
-  "version": "0.2.0",
+  "version": "1.0.1",
   "description": "Game overlay native addon for Electron (DirectX hook, window injection)",
   "main": "index.js",
   "types": "index.d.ts",
