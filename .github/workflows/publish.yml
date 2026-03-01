@@ -26,8 +26,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Copy prebuilt binaries
+        run: |
+          copy ..\game-overlay\prebuilt\n_overlay.dll .
+          copy ..\game-overlay\prebuilt\n_overlay.x64.dll .
+          copy ..\game-overlay\prebuilt\injector_helper.exe .
+          copy ..\game-overlay\prebuilt\injector_helper.x64.exe .
+
       - name: Build native addon
         run: npx cmake-js rebuild --runtime electron --runtime-version 33.0.0 -A x64
+
+      - name: Verify package files
+        run: |
+          echo "Checking required files..."
+          if (!(Test-Path "electron-overlay.node")) { throw "Missing electron-overlay.node" }
+          if (!(Test-Path "n_overlay.dll")) { throw "Missing n_overlay.dll" }
+          if (!(Test-Path "n_overlay.x64.dll")) { throw "Missing n_overlay.x64.dll" }
+          if (!(Test-Path "injector_helper.exe")) { throw "Missing injector_helper.exe" }
+          if (!(Test-Path "injector_helper.x64.exe")) { throw "Missing injector_helper.x64.exe" }
+          echo "All files present."
+        shell: pwsh
 
       - name: Pack tarball
         run: npm pack
