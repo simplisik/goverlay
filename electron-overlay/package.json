@@ -18,7 +18,7 @@
     "win32"
   ],
   "dependencies": {
-    "node-addon-api": "^4.1.0"
+    "node-addon-api": "^8.0.0"
   },
   "devDependencies": {
     "cmake-js": "^7.0.0"
