@@ -9,7 +9,11 @@
     "index.d.ts",
     "electron-overlay.node",
     "src/**",
-    "CMakeLists.txt"
+    "CMakeLists.txt",
+    "n_overlay.dll",
+    "n_overlay.x64.dll",
+    "injector_helper.exe",
+    "injector_helper.x64.exe"
   ],
   "scripts": {
     "build": "cmake-js rebuild --runtime electron"
