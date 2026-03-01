@@ -1,5 +1,5 @@
 /// <reference types="node" />
-declare module "electron-overlay" {
+declare module "@simplisik/goverlay" {
 
     interface IHotkey{
         name: string;

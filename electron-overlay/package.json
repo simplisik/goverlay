@@ -1,0 +1,35 @@
+{
+  "name": "@simplisik/goverlay",
+  "version": "0.2.0",
+  "description": "Game overlay native addon for Electron (DirectX hook, window injection)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "electron-overlay.node",
+    "src/**",
+    "CMakeLists.txt"
+  ],
+  "scripts": {
+    "build": "cmake-js rebuild --runtime electron"
+  },
+  "os": [
+    "win32"
+  ],
+  "dependencies": {
+    "node-addon-api": "^4.1.0"
+  },
+  "devDependencies": {
+    "cmake-js": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplisik/goverlay.git"
+  },
+  "license": "MIT",
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "33.0.0"
+  }
+}
